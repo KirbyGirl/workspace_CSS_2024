@@ -1,0 +1,26 @@
+/* 00 css variable*/
+
+:root{
+    --body-color: darkslategray;
+    --page-color: rgb(252, 252, 214);
+    --sidebar-color: rgb(142, 247, 230);
+    /*Font color*/
+    --font-color: rgb(1, 1, 48);
+    /*h1 color*/
+    --h1-color: var(--body-color);
+}
+/*color */
+body{
+    background-color: var(--body-color);
+    color: var(--page-color);
+}
+#zen-intro, #zen-supporting{
+    background-color: var(--page-color);
+    color: var(--font-color);
+}
+.sidebar{
+    background-color: var(--sidebar-color);
+}
+h1{
+    color: var(--h1-color);
+}
