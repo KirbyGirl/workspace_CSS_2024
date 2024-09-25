@@ -9,15 +9,16 @@
     /*h1 color*/
     --h1-color: var(--body-color);
     /* layout variables */
-    --page-top-positiion: 85%;
+    --page-top-positiion: 90%;
     --page-width: 20%;
-    --bottom-bar-height: 15vh;
-    --bottom-bar-color: hsla(252, 250, 210);
+    --bottom-bar-height: 10vh;
+    --bottom-bar-color: rgb(109, 63, 16) ;
 }
 /* 01 color */
 body{
     background-color: var(--body-color);
     color: var(--page-color);
+    margin: 0;
 }
 #zen-intro, #zen-supporting{
     background-color: var(--page-color);
@@ -25,6 +26,7 @@ body{
 }
 .sidebar{
     background-color: var(--sidebar-color);
+    color: var(--body-color);
 }
 h1{
     color: var(--h1-color);
@@ -36,20 +38,25 @@ div.explanation, div.requirements, div.benefits, div.participation{
     width: var(--page-width);
     top:var(--page-top-positiion);
     background-image: url(../img/newspaper3.jpg);
-    
+    padding-left: 5px;
+
+}
+div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3{
+    margin-top: -5%;
+    text-shadow: 0 0 5px white;
 }
 
 div.explaination{
     left: 0%;
 }
 div.requirements{
-    left: 15%;
+    left: 18%;
 }
 div.benefits{
-    left: 30%;
+    left: 33%;
 }
 div.participation{
-    left: 45%;
+    left: 43%;
 }
 aside.sidebar{
     position: absolute;
@@ -59,18 +66,71 @@ aside.sidebar{
 }
 section.intro{
     position: fixed;
-    width: 45%;
+    bottom: 7%;
+    width: 35%;
     right: 30%;
-    top: 30px;
+    top: 5%;
     background-image: url(../img/newspaper1.jpg);
+    padding: 2%;
+    border: outset 2px black;
+    text-align: center;
+
 }
 
 div.extra2{
     position: fixed;
     bottom: 0;
-    left: 0;
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: var(--bottom-bar-height);
     background-color: var(--bottom-bar-color);
 
+}
+
+div.extra1{
+    position: fixed;
+    bottom: 5%;
+    width: 35%;
+    left: 10%;
+    top: 10%;
+    background-image: url(../img/newspaper2.jpg);
+    z-index: -1;
+
+}
+
+@font-face {
+    font-family: 'my font';
+    src: url(../fonts/chunkfive.eot);
+}
+
+header h1{
+    font-family: 'my font', sans-serif;
+    font-weight: 100;
+    font-size: large;
+    letter-spacing: normal;
+    line-height: 1em;
+}
+
+header h2,h3{
+    font-family: 'Press Start 2P';
+    font-weight: 100;
+    font-size: small;
+    letter-spacing: normal;
+    line-height: 1em;
+}
+
+.intro p{
+    font-family: 'Macondo';
+    font-size: 15px;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+#design-selection h3{
+    visibility: hidden;
+}
+
+#design-archives, #zen-resources{
+    visibility: hidden;
 }
