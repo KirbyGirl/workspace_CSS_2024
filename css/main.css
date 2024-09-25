@@ -74,6 +74,7 @@ section.intro{
     padding: 2%;
     border: outset 2px black;
     text-align: center;
+    box-shadow: -5px 5px 10px black;
 
 }
 
