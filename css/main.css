@@ -30,6 +30,9 @@ body{
 }
 h1{
     color: var(--h1-color);
+    text-shadow: 1px 2px 3px red, 4px 4px 3px blue, 7px 6px 3px purple, 10px 8px 3px green, -10px -8px 3px wheat
+    , -7px -6px 3px black, -4px -4px 3px yellow, -1px -2px 3px olive, 11px 20px 6px firebrick, -5px 6px 4px darkblue,
+    9px -2px 1px khaki, 3px 1px 0px aliceblue, -20px 20px 0px blueviolet;
 }
 
 /* 02 Layout*/
@@ -42,21 +45,27 @@ div.explanation, div.requirements, div.benefits, div.participation{
 
 }
 div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3{
+    padding-left: 0%;
     margin-top: -5%;
     text-shadow: 0 0 5px white;
+    z-index: 1;
+    background-color: chocolate;
+    background-size: cover;
+    border-top-right-radius: 50%;
 }
 
 div.explaination{
     left: 0%;
+    padding-right: 10px;
 }
 div.requirements{
     left: 18%;
 }
 div.benefits{
-    left: 33%;
+    left: 38%;
 }
 div.participation{
-    left: 43%;
+    left: 58%;
 }
 aside.sidebar{
     position: absolute;
@@ -69,13 +78,13 @@ section.intro{
     bottom: 7%;
     width: 35%;
     right: 30%;
-    top: 5%;
+    top: 3%;
     background-image: url(../img/newspaper1.jpg);
     padding: 2%;
     border: outset 2px black;
     text-align: center;
     box-shadow: -5px 5px 10px black;
-
+    line-height: 0.5em;
 }
 
 div.extra2{
@@ -132,6 +141,25 @@ header h2,h3{
     visibility: hidden;
 }
 
-#design-archives, #zen-resources{
+#zen-resources{
     visibility: hidden;
+}
+
+#design-archives{
+    display: none;
+}
+
+a:hover{
+    font-size: 1.5em;
+
+}
+
+div.explanation:active, div.requirements:active, div.participation:active, div.benefits:active{
+    top: 15vh;
+    height: 90vh;
+}
+
+p::first-letter{
+    font-size: 25px;
+    font-family: 'Jacquarda Bastarda 9 Charted';
 }
