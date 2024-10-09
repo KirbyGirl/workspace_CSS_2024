@@ -13,6 +13,9 @@
     --page-width: 20%;
     --bottom-bar-height: 10vh;
     --bottom-bar-color: rgb(109, 63, 16) ;
+    --insanity-shadow: 91px 2px 3px red, -124px 14px 3px blue, 7px 28px 3px purple, 10px -8px 3px green, -10px -8px 3px wheat
+    , -117px -6px 3px black, 114px 34px 3px yellow, -1px -2px 3px olive, 11px 20px 6px firebrick, -5px 6px 4px darkblue,
+    129px -32px 5px khaki, 3px 1px 0px aliceblue, -20px 20px 2px blueviolet;
 }
 /* 01 color */
 body{
@@ -30,9 +33,7 @@ body{
 }
 h1{
     color: var(--h1-color);
-    text-shadow: 1px 2px 3px red, 4px 4px 3px blue, 7px 6px 3px purple, 10px 8px 3px green, -10px -8px 3px wheat
-    , -7px -6px 3px black, -4px -4px 3px yellow, -1px -2px 3px olive, 11px 20px 6px firebrick, -5px 6px 4px darkblue,
-    9px -2px 1px khaki, 3px 1px 0px aliceblue, -20px 20px 0px blueviolet;
+    text-shadow: var(--insanity-shadow);
 }
 
 /* 02 Layout*/
@@ -42,6 +43,7 @@ div.explanation, div.requirements, div.benefits, div.participation{
     top:var(--page-top-positiion);
     background-image: url(../img/newspaper3.jpg);
     padding-left: 5px;
+    transition: all 2s ease-in-out;
 
 }
 div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3{
@@ -76,7 +78,7 @@ aside.sidebar{
 section.intro{
     position: fixed;
     bottom: 7%;
-    width: 35%;
+    width: 30%;
     right: 30%;
     top: 3%;
     background-image: url(../img/newspaper1.jpg);
@@ -85,6 +87,7 @@ section.intro{
     text-align: center;
     box-shadow: -5px 5px 10px black;
     line-height: 0.5em;
+    transform: rotate(20deg);
 }
 
 div.extra2{
@@ -95,7 +98,6 @@ div.extra2{
     width: 100%;
     height: var(--bottom-bar-height);
     background-color: var(--bottom-bar-color);
-
 }
 
 div.extra1{
@@ -106,7 +108,7 @@ div.extra1{
     top: 10%;
     background-image: url(../img/newspaper2.jpg);
     z-index: -1;
-
+    transform: rotate(-10deg);
 }
 
 @font-face {
@@ -125,7 +127,7 @@ header h1{
 header h2,h3{
     font-family: 'Press Start 2P';
     font-weight: 100;
-    font-size: small;
+    font-size: 13px;
     letter-spacing: normal;
     line-height: 1em;
 }
@@ -154,7 +156,7 @@ a:hover{
 
 }
 
-div.explanation:active, div.requirements:active, div.participation:active, div.benefits:active{
+div.explanation:hover, div.requirements:hover, div.participation:hover, div.benefits:hover{
     top: 15vh;
     height: 90vh;
 }
@@ -162,4 +164,35 @@ div.explanation:active, div.requirements:active, div.participation:active, div.b
 p::first-letter{
     font-size: 25px;
     font-family: 'Jacquarda Bastarda 9 Charted';
+}
+
+/* transform and transition practice */
+
+section.intro h3 ~p{
+    opacity: 1;
+    transition: all 2s ease-in-out;
+}
+
+section.intro h3:hover ~p{
+    transform: scale(0.5);
+    opacity: 0;
+}
+
+@keyframes backandforth {
+    from{transform: translate(-50px,0) ;}
+    25%{transform:  translate(500px,0);}
+    15%{transform:  translate(100px,0);}
+    75%{transform:  translate(-300px,0);}
+    64%{transform:  translate(200px,0);}
+}
+
+footer{position: fixed;
+bottom: 1vh;
+left: 50%;
+z-index: 4;
+animation: 10s ease-in-out 2s alternate infinite backandforth;}
+
+/* fun features */
+aside.sidebar{
+    clip-path: polygon(0 0, 0 60%, 50% 80%, 100% 60%, 100% 0);
 }
